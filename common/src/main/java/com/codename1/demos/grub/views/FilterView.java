@@ -80,7 +80,7 @@ public class FilterView extends AbstractEntityView{
         }
 
         CategoryButton riceButton = new CategoryButton("Rice",
-                "rice-icon.png",
+                "ricee-icon.png",
                 "rice-icon-selected.png",
                 Restaurant.CATEGORY_RICE);
         if(categories.contains(Restaurant.CATEGORY_RICE)){
@@ -88,7 +88,7 @@ public class FilterView extends AbstractEntityView{
         }
 
         CategoryButton pizzaButton = new CategoryButton("Pizza",
-                "pizza-icon.png",
+                "piza-icon.png",
                 "pizza-icon-selected.png",
                 Restaurant.CATEGORY_PIZZA);
         if(categories.contains(Restaurant.CATEGORY_PIZZA)){
@@ -96,7 +96,7 @@ public class FilterView extends AbstractEntityView{
         }
 
         CategoryButton donutButton = new CategoryButton("Donut",
-                "donut-icon.png",
+                "donuut-icon.png",
                 "donut-icon-selected.png",
                 Restaurant.CATEGORY_DONUT);
         if(categories.contains(Restaurant.CATEGORY_DONUT)){

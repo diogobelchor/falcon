@@ -44,7 +44,7 @@ public class MainWindowOrdersView extends AbstractEntityView {
         setLayout(new BorderLayout());
         setUIID("MainWindowOrdersView");
 
-        Label headerLabel = new Label("Meus pedidos", "MyOrdersHeaderLabel");
+        Label headerLabel = new Label("Minha viagens", "MyOrdersHeaderLabel");
         Container headerCnt = BorderLayout.centerAbsolute(headerLabel);
         headerCnt.setUIID("MyOrdersHeaderCnt");
         add(BorderLayout.NORTH, headerCnt);
@@ -82,12 +82,12 @@ public class MainWindowOrdersView extends AbstractEntityView {
         inProgressCnt.getAllStyles().setBgImage(getGlobalResources().getImage(backgroundImageName));
         inProgressCnt.getAllStyles().setBackgroundType(Style.BACKGROUND_IMAGE_SCALED);
         Container deliveryInfoCnt = new Container(new BorderLayout());
-        Label trackingOrderLabel = new Label ("Tracking Order", "TrackingOrderLabel");
+        Label trackingOrderLabel = new Label ("Sua Viagem", "TrackingOrderLabel");
         Label orderId = new Label ("Order #" + completedOrder.getInt(CompletedOrder.orderId), "OrderIdLabel");
         deliveryInfoCnt.add(BorderLayout.NORTH, BoxLayout.encloseY(trackingOrderLabel, orderId));
 
-        Label preparingFoodLabel = new Label ("Preparing Food", "PreparingFoodLabel");
-        Label drivesAtTheRestaurantLabel = new Label ("Drives At The Restaurant", "DrivesAtTheRestaurantLabel");
+        Label preparingFoodLabel = new Label ("A caminho", "PreparingFoodLabel");
+        Label drivesAtTheRestaurantLabel = new Label ("Indo ate você", "DrivesAtTheRestaurantLabel");
         String progressImageName = Grub.isDarkMode() ? "delivery-progress-dark.png" : "delivery-progress.png";
         Image deliveryProgressImage = getGlobalResources().getImage(progressImageName);
         ScaleImageLabel deliveryProgress = new ScaleImageLabel(deliveryProgressImage){
@@ -107,7 +107,7 @@ public class MainWindowOrdersView extends AbstractEntityView {
         Image iconRating = getGlobalResources().getImage("rating-icon.png").scaled(convertToPixels(4), convertToPixels(4));
         Image iconDriver = getGlobalResources().getImage("account-place-holder.png");
 
-        Label driverName = new Label("James Smith", "DriverNameLabel");
+        Label driverName = new Label("Sergio Silva", "DriverNameLabel");
         Label driverRating = new Label(" 4.9/5", iconRating, "DriverRatingLabel");
         ScaleImageLabel driverImageLabel = new ScaleImageLabel(iconDriver){
             @Override

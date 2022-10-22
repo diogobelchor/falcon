@@ -183,7 +183,7 @@ public class HomeView extends AbstractEntityView {
         topView.add(topViewLabelsCnt);
         add(topView);
 
-        Container categoryRiceButton = createCategoryButton("Drivers", "rice-icon.png", evt -> {
+        Container categoryRiceButton = createCategoryButton("Drivers", "ricee-icon.png", evt -> {
             updateFilter(Restaurant.CATEGORY_RICE);
             evt.consume();
             ActionNode action = viewNode.getInheritedAction(HomeView.ENTER_SEARCH);
@@ -192,7 +192,7 @@ public class HomeView extends AbstractEntityView {
             }
         });
 
-        Container categoryRiceButton1 = createCategoryButton("Carro", "pizza-icon.png", evt -> {
+        Container categoryRiceButton1 = createCategoryButton("Carro", "piza-icon.png", evt -> {
             updateFilter(Restaurant.CATEGORY_PIZZA);
             evt.consume();
             ActionNode action = viewNode.getInheritedAction(HomeView.ENTER_SEARCH);
@@ -201,7 +201,7 @@ public class HomeView extends AbstractEntityView {
             }
         });
 
-        Container categoryRiceButton2 = createCategoryButton("Moto", "donut-icon.png", evt -> {
+        Container categoryRiceButton2 = createCategoryButton("Moto", "donuut-icon.png", evt -> {
             updateFilter(Restaurant.CATEGORY_DONUT);
             evt.consume();
             ActionNode action = viewNode.getInheritedAction(HomeView.ENTER_SEARCH);

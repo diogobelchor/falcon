@@ -146,17 +146,17 @@ public class Grub extends ApplicationController {
     }
 
     private Entity createRestaurantDemoModel(){
-        RestaurantModel restaurant = new RestaurantModel("Sergio", "https://sergeycodenameone.github.io/restaurant.png", "Italian", 4.7, 5, "https://sergeycodenameone.github.io/restaurant-icon.png",30, createDemoMenu());
+        RestaurantModel restaurant = new RestaurantModel("Sergio", "https://cptstatic.s3.amazonaws.com/imagens/enviadas/materias/materia13092/motorista-cursos-cpt.jpg", "Brasil", 4.7, 5, "https://cptstatic.s3.amazonaws.com/imagens/enviadas/materias/materia13092/motorista-cursos-cpt.jpg",30, createDemoMenu());
         return restaurant;
     }
 
     private List<Entity> createDemoMenu(){
         List<Entity> menu = new ArrayList<>();
-
-        menu.add(new FoodCategoryModel("Pizzas", createPizzaMenu()));
-        menu.add(new FoodCategoryModel("Pastas", createPastaMenu()));
-        menu.add(new FoodCategoryModel("Desserts", createDessertsMenu()));
-        menu.add(new FoodCategoryModel("Drinks", createDrinksMenu()));
+        https://br.depositphotos.com/12750550/stock-photo-driver.html
+        menu.add(new FoodCategoryModel("Viagens", createPizzaMenu()));
+        //menu.add(new FoodCategoryModel("Pastas", createPastaMenu()));
+        //menu.add(new FoodCategoryModel("Desserts", createDessertsMenu()));
+        //menu.add(new FoodCategoryModel("Drinks", createDrinksMenu()));
         return menu;
     }
 
@@ -198,12 +198,12 @@ public class Grub extends ApplicationController {
 
     private List<Entity> createPizzaMenu(){
         List<Entity> dishes = new ArrayList<>();
-        dishes.add(new DishModel("Neapolitan Pizza", "Large pizza", "https://sergeycodenameone.github.io/pizza-image.jpg", 4.60, createDemoAddOns()));
-        dishes.add(new DishModel("Chicago Pizza", "Medium pizza", "https://sergeycodenameone.github.io/pizza-image.jpg", 4.60, createDemoAddOns()));
-        dishes.add(new DishModel("New York-Style Pizza", "Small pizza", "https://sergeycodenameone.github.io/pizza-image.jpg", 4.60, createDemoAddOns()));
-        dishes.add(new DishModel("Sicilian Pizza", "Medium pizza", "https://sergeycodenameone.github.io/pizza-image.jpg", 4.60, createDemoAddOns()));
-        dishes.add(new DishModel("Greek Pizza", "Small pizza", "https://sergeycodenameone.github.io/pizza-image.jpg", 4.60, createDemoAddOns()));
-        dishes.add(new DishModel("California Pizza", "Medium pizza", "https://sergeycodenameone.github.io/pizza-image.jpg", 4.60, createDemoAddOns()));
+        dishes.add(new DishModel("Chamar Sergio", "Seguro", "https://cptstatic.s3.amazonaws.com/imagens/enviadas/materias/materia13092/motorista-cursos-cpt.jpg", 5.50, createDemoAddOns()));
+        //dishes.add(new DishModel("Chicago Pizza", "Medium pizza", "https://sergeycodenameone.github.io/pizza-image.jpg", 4.60, createDemoAddOns()));
+        //dishes.add(new DishModel("New York-Style Pizza", "Small pizza", "https://sergeycodenameone.github.io/pizza-image.jpg", 4.60, createDemoAddOns()));
+        //dishes.add(new DishModel("Sicilian Pizza", "Medium pizza", "https://sergeycodenameone.github.io/pizza-image.jpg", 4.60, createDemoAddOns()));
+        //dishes.add(new DishModel("Greek Pizza", "Small pizza", "https://sergeycodenameone.github.io/pizza-image.jpg", 4.60, createDemoAddOns()));
+        //dishes.add(new DishModel("California Pizza", "Medium pizza", "https://sergeycodenameone.github.io/pizza-image.jpg", 4.60, createDemoAddOns()));
 
         return dishes;
     }
@@ -212,10 +212,10 @@ public class Grub extends ApplicationController {
     private List<Entity> createDemoAddOns(){
         List addOns = new ArrayList();
 
-        addOns.add(new DishAddOnModel("mushrooms", "https://sergeycodenameone.github.io/mushrooms-image.jpg", 4.0));
-        addOns.add(new DishAddOnModel("tomato", "https://sergeycodenameone.github.io/tomato-image.jpg", 2.0));
-        addOns.add(new DishAddOnModel("cheese", "https://sergeycodenameone.github.io/cheese-image.jpg", 3.0));
-        addOns.add(new DishAddOnModel("onion", "https://sergeycodenameone.github.io/onion-image.jpg", 1.0));
+        addOns.add(new DishAddOnModel("Parada", "", 20.0));
+        //addOns.add(new DishAddOnModel("tomato", "https://sergeycodenameone.github.io/tomato-image.jpg", 2.0));
+        //addOns.add(new DishAddOnModel("cheese", "https://sergeycodenameone.github.io/cheese-image.jpg", 3.0));
+        //addOns.add(new DishAddOnModel("onion", "https://sergeycodenameone.github.io/onion-image.jpg", 1.0));
 
         return addOns;
     }
