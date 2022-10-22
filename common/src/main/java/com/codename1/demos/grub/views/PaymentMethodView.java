@@ -44,7 +44,7 @@ public class PaymentMethodView extends AbstractEntityView {
     public PaymentMethodView(Entity model, Node viewNode) {
         super(model);
         setLayout(new BorderLayout());
-        view = new MultiButton("PAYMENT METHOD");
+        view = new MultiButton("Metodo de pagamento");
         view.setUIID("PaymentMethodView");
         view.setUIIDLine1("PaymentMethodViewHeader");
         view.setUIIDLine2("PaymentMethodViewText");
@@ -69,7 +69,7 @@ public class PaymentMethodView extends AbstractEntityView {
         int method = getEntity().getInt(PaymentMethod.method);
 
         if (method == PaymentMethod.CASH){
-            view.setTextLine2("Cash on delivery");
+            view.setTextLine2("Dinheiro no app");
         }else if(method == PaymentMethod.CREDIT_CARD){
             Entity card = getEntity().getEntity(PaymentMethod.creditCard);
             String cardNumber = card.getText(CreditCard.number);

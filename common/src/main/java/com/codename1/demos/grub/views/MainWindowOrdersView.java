@@ -44,7 +44,7 @@ public class MainWindowOrdersView extends AbstractEntityView {
         setLayout(new BorderLayout());
         setUIID("MainWindowOrdersView");
 
-        Label headerLabel = new Label("My orders", "MyOrdersHeaderLabel");
+        Label headerLabel = new Label("Meus pedidos", "MyOrdersHeaderLabel");
         Container headerCnt = BorderLayout.centerAbsolute(headerLabel);
         headerCnt.setUIID("MyOrdersHeaderCnt");
         add(BorderLayout.NORTH, headerCnt);
@@ -55,8 +55,8 @@ public class MainWindowOrdersView extends AbstractEntityView {
         ordersView.setTabPlacement(Component.TOP);
         recentOrdersView = new RecentOrdersView(account, viewNode);
         inProgressCnt = new Container(new BorderLayout());
-        ordersView.addTab("In Progress", inProgressCnt);
-        ordersView.addTab("Recent", recentOrdersView);
+        ordersView.addTab("A caminho", inProgressCnt);
+        ordersView.addTab("Recentes", recentOrdersView);
 
         add(BorderLayout.CENTER, ordersView);
     }

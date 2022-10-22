@@ -62,28 +62,28 @@ public class EditProfileView extends AbstractEntityView {
             evt.consume();
             ActionSupport.dispatchEvent(new FormController.FormBackEvent(backButton));
         });
-        Label headerLabel = new Label("EDIT PROFILE", "EditProfileHeaderLabel");
+        Label headerLabel = new Label("Editar perfil", "EditProfileHeaderLabel");
         Container headerCnt = BorderLayout.center(headerLabel).add(BorderLayout.WEST, backButton);
         headerCnt.setUIID("EditProfileHeaderCnt");
         add(BorderLayout.NORTH, headerCnt);
 
-        TextField firstName = new TextField("", "First Name", 20, TextArea.ANY);
+        TextField firstName = new TextField("", "Nome", 20, TextArea.ANY);
         firstName.setUIID("EditProfileField");
         firstName.getHintLabel().setUIID("SignUpFieldHint");
 
-        TextField lastName = new TextField("", "Last Name", 20, TextArea.ANY);
+        TextField lastName = new TextField("", "Sobrenome", 20, TextArea.ANY);
         lastName.setUIID("EditProfileField");
         lastName.getHintLabel().setUIID("SignUpFieldHint");
 
-        TextField emailAddress = new TextField("", "Email Address", 20, TextArea.EMAILADDR);
+        TextField emailAddress = new TextField("", "Email", 20, TextArea.EMAILADDR);
         emailAddress.setUIID("EditProfileField");
         emailAddress.getHintLabel().setUIID("SignUpFieldHint");
 
-        TextField password = new TextField("", "Password", 20, TextArea.PASSWORD);
+        TextField password = new TextField("", "Senha", 20, TextArea.PASSWORD);
         password.setUIID("EditProfileField");
         password.getHintLabel().setUIID("SignUpFieldHint");
 
-        TextField phoneNumber = new TextField("", "Mobile Number", 20, TextArea.PHONENUMBER);
+        TextField phoneNumber = new TextField("", "Telefone", 20, TextArea.PHONENUMBER);
         phoneNumber.setUIID("EditProfileField");
         phoneNumber.getHintLabel().setUIID("SignUpFieldHint");
         Container textFields = BoxLayout.encloseY(firstName, lastName, emailAddress, password, phoneNumber);
@@ -101,7 +101,7 @@ public class EditProfileView extends AbstractEntityView {
         validator.addConstraint(password, new LengthConstraint(8));
         validator.addConstraint(phoneNumber, new LengthConstraint(10));
 
-        Button saveButton = new Button("Save", "EditProfileSaveButton");
+        Button saveButton = new Button("Salvar", "EditProfileSaveButton");
         validator.addSubmitButtons(saveButton);
         saveButton.addActionListener(evt -> {
             evt.consume();

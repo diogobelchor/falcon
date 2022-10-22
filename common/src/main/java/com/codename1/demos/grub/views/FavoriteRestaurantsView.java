@@ -46,7 +46,7 @@ public class FavoriteRestaurantsView extends AbstractEntityView {
         this.viewNode = viewNode;
         setLayout(new BoxLayout(BoxLayout.Y_AXIS));
 
-        Label headerLabel = new Label("FAVORITES", "FavoriteHeaderLabel");
+        Label headerLabel = new Label("FAVORITOS", "FavoriteHeaderLabel");
         Container headerCnt = BorderLayout.center(headerLabel);
         headerCnt.setUIID("FavoriteHeaderCnt");
         add(headerCnt);

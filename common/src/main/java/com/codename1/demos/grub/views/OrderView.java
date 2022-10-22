@@ -88,7 +88,7 @@ public class OrderView extends AbstractEntityView {
             evt.consume();
             ActionSupport.dispatchEvent(new FormController.FormBackEvent(backButton));
         });
-        Label headerLabel = new Label("MY ORDERS", "AddDishHeaderLabel");
+        Label headerLabel = new Label("Meus Pedidos", "AddDishHeaderLabel");
         Container headerCnt = BorderLayout.centerCenter(headerLabel).add(BorderLayout.WEST, backButton);
         headerCnt.setUIID("AddDishHeaderCnt");
         add(headerCnt);
@@ -102,12 +102,12 @@ public class OrderView extends AbstractEntityView {
                 dishesCnt.add(dish);
             }
         }
-        MultiButton addPromoCodeButton = new MultiButton("ADD PROMO CODE");
+        MultiButton addPromoCodeButton = new MultiButton("Cod promocional");
         addPromoCodeButton.setUIID("AddPromoCodeButton");
         addPromoCodeButton.setUIIDLine1("AddPromoCodeButtonTextLine1");
         addPromoCodeButton.setUIIDLine2("AddPromoCodeButtonTextLine2");
         if ((double)restEntity.get(discountProp) != 0.0){
-            addPromoCodeButton.setTextLine2("You have 20% Discount!!!");
+            addPromoCodeButton.setTextLine2("Você tem 20% de Desconto!!!");
         }
         Image promCodeImage = getGlobalResources().getImage("ticket-icon.png").scaled(convertToPixels(4), convertToPixels(4));
         addPromoCodeButton.setIcon(promCodeImage);
@@ -120,14 +120,14 @@ public class OrderView extends AbstractEntityView {
             Command cancelCommand = new Command("Cancel");
 
             Command[] commands = {okCommand, cancelCommand};
-            TextField promoCode = new TextField("", "Promo Code");
+            TextField promoCode = new TextField("", "Promo Cod");
             promoCode.setUIID("PromoCodeTextField");
             promoCode.getHintLabel().setUIID("PromoCodeTextFieldHint");
-            if (okCommand == Dialog.show("Enter Promo Code", promoCode, commands)){
+            if (okCommand == Dialog.show("colocar cod promo", promoCode, commands)){
                 String promoCodeString = promoCode.getText();
                 if (promoCodeString != null && promoCodeString.length() > 0){
                     restEntity.set(discountProp, 0.2);
-                    addPromoCodeButton.setTextLine2("You have 20% Discount!!!");
+                    addPromoCodeButton.setTextLine2("Você tem 20% de Desconto!!!");
                     this.update();
                 }
             }
@@ -143,7 +143,7 @@ public class OrderView extends AbstractEntityView {
         paymentView = new PaymentMethodView(paymentMethod, viewNode);
         orderDetails.add(paymentView);
 
-        deliverToButton = new MultiButton("DELIVER TO");
+        deliverToButton = new MultiButton("Ate você");
         deliverToButton.setUIID("ManageAddressButton");
         deliverToButton.setUIIDLine1("ManageAddressButtonLine1");
         deliverToButton.setUIIDLine2("ManageAddressButtonLine2");
@@ -179,7 +179,7 @@ public class OrderView extends AbstractEntityView {
         totalPriceCnt = BorderLayout.centerCenterEastWest(null, totalPriceLabel, totalHeaderLabel);
         totalPriceCnt.setUIID("TotalCostCnt");
 
-        Button confirmOrder = new Button("Confirm Order", "OrderConfirmButton");
+        Button confirmOrder = new Button("Confirmar pedido", "OrderConfirmButton");
         confirmOrder.addActionListener(evt->{
             evt.consume();
             ActionNode action = mainWindowNode.getInheritedAction(COMPLETE_ORDER);

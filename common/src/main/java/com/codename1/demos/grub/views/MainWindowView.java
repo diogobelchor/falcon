@@ -58,18 +58,18 @@ public class MainWindowView extends AbstractEntityView {
                                     homeView);
 
         favoriteView = new FavoriteRestaurantsView((Entity)mainWindowEntity.get(MainWindow.profile), homeViewNode);
-        mainWindowContainer.addTab("FAVORITE",
+        mainWindowContainer.addTab("FAVORITOS",
                                     getGlobalResources().getImage("main-window-home.png").scaled(TABS_ICON_SIZE, TABS_ICON_SIZE),
                                     getGlobalResources().getImage("main-window-home-selected.png").scaled(TABS_ICON_SELECTED_SIZE, TABS_ICON_SELECTED_SIZE),
                                     favoriteView);
 
         ordersView = new MainWindowOrdersView(mainWindowEntity.getEntity(MainWindow.profile), homeViewNode);
-        mainWindowContainer.addTab("ORDERS",
+        mainWindowContainer.addTab("OUTROS",
                                     getGlobalResources().getImage("main-window-orders.png").scaled(TABS_ICON_SIZE, TABS_ICON_SIZE),
                                     getGlobalResources().getImage("main-window-orders-selected.png").scaled(TABS_ICON_SELECTED_SIZE, TABS_ICON_SELECTED_SIZE),
                                     ordersView);
 
-        mainWindowContainer.addTab("PROFILE",
+        mainWindowContainer.addTab("PERFIL",
                                     getGlobalResources().getImage("main-window-profile.png").scaled(TABS_ICON_SIZE, TABS_ICON_SIZE),
                                     getGlobalResources().getImage("main-window-profile-selected.png").scaled(TABS_ICON_SELECTED_SIZE, TABS_ICON_SELECTED_SIZE),
                                     new ProfileView(mainWindowEntity.getEntity(MainWindow.profile), profileNode, appNode));

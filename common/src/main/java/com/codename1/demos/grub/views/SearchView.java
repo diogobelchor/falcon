@@ -65,7 +65,7 @@ public class SearchView extends AbstractEntityView {
             evt.consume();
             ActionSupport.dispatchEvent(new FormController.FormBackEvent(backButton));
         });
-        Label headerLabel = new Label("RESTAURANTS", "SearchHeaderLabel");
+        Label headerLabel = new Label("Motoristas", "SearchHeaderLabel");
         Container headerCnt = BorderLayout.centerCenter(headerLabel).add(BorderLayout.WEST, backButton);
         headerCnt.setUIID("SearchHeaderCnt");
         add(headerCnt);
@@ -120,7 +120,7 @@ public class SearchView extends AbstractEntityView {
 
         filterCnt.setUIID("SearchFilterCnt");
         add(filterCnt);
-        Label categoryHeaderLabel = new Label("All Restaurants", "CategoryHeader");
+        Label categoryHeaderLabel = new Label("Motoristas", "CategoryHeader");
         add(categoryHeaderLabel);
         final int restsCount = ((EntityList)appEntity.get(restsProp)).size();
         final int landscapeRows = restsCount % 2 == 0 ? restsCount / 2 : restsCount / 2 + 1;

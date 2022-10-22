@@ -85,13 +85,13 @@ public class HomeView extends AbstractEntityView {
         int currHour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
         if (currHour >= 0 && currHour <= 12){
             homeTopViewImage = getGlobalResources().getImage("morning.png");
-            welcomeText = "Good Morning";
+            welcomeText = "Bom Dia!";
         }else if(currHour < 18){
             homeTopViewImage = getGlobalResources().getImage("afternoon.png");
-            welcomeText = "Good Afternoon";
+            welcomeText = "Boa Tarde!";
         }else{
             homeTopViewImage = getGlobalResources().getImage("evening.png");
-            welcomeText = "Good Evening";
+            welcomeText = "Boa Noite!";
         }
         ScaleImageLabel topViewLabel = new ScaleImageLabel(homeTopViewImage){
             @Override
@@ -144,7 +144,7 @@ public class HomeView extends AbstractEntityView {
         };
 
         searchField.setUIID("HomeSearchField");
-        searchField.setHint("Search ...");
+        searchField.setHint("Pesquisar ...");
         searchField.getHintLabel().setUIID("HomeSearchFieldHint");
         searchField.addActionListener(evt -> {
             evt.consume();
@@ -166,7 +166,7 @@ public class HomeView extends AbstractEntityView {
 
         AccountModel accountModel = (AccountModel) appEntity.getEntity(accountProp);
         deliverToLabel = new Label("", "HomeDeliverToLabel");
-        deliverToCnt = BoxLayout.encloseY(new Button("DELIVER TO", "HomeDeliverToHeaderButton"), deliverToLabel);
+        deliverToCnt = BoxLayout.encloseY(new Button("Ate você", "HomeDeliverToHeaderButton"), deliverToLabel);
         deliverToCnt.setUIID("HomeDeliverToCnt");
         deliverToCnt.setVisible(false);
         Entity defaultAddress = accountModel.getDefaultAddress();
@@ -178,12 +178,12 @@ public class HomeView extends AbstractEntityView {
         }
 
         Container topViewLabelsCnt = BorderLayout.north(BoxLayout.encloseY(deliverToCnt, new Label(welcomeText, "HomeWelcomeTextFirstLine"),
-                new Label("Codename One!", "HomeWelcomeTextSecondLine")));
+                new Label("FalconDrivers!", "HomeWelcomeTextSecondLine")));
 
         topView.add(topViewLabelsCnt);
         add(topView);
 
-        Container categoryRiceButton = createCategoryButton("Rice", "rice-icon.png", evt -> {
+        Container categoryRiceButton = createCategoryButton("Drivers", "rice-icon.png", evt -> {
             updateFilter(Restaurant.CATEGORY_RICE);
             evt.consume();
             ActionNode action = viewNode.getInheritedAction(HomeView.ENTER_SEARCH);
@@ -192,7 +192,7 @@ public class HomeView extends AbstractEntityView {
             }
         });
 
-        Container categoryRiceButton1 = createCategoryButton("Pizza", "pizza-icon.png", evt -> {
+        Container categoryRiceButton1 = createCategoryButton("Carro", "pizza-icon.png", evt -> {
             updateFilter(Restaurant.CATEGORY_PIZZA);
             evt.consume();
             ActionNode action = viewNode.getInheritedAction(HomeView.ENTER_SEARCH);
@@ -201,7 +201,7 @@ public class HomeView extends AbstractEntityView {
             }
         });
 
-        Container categoryRiceButton2 = createCategoryButton("Donut", "donut-icon.png", evt -> {
+        Container categoryRiceButton2 = createCategoryButton("Moto", "donut-icon.png", evt -> {
             updateFilter(Restaurant.CATEGORY_DONUT);
             evt.consume();
             ActionNode action = viewNode.getInheritedAction(HomeView.ENTER_SEARCH);
@@ -246,7 +246,7 @@ public class HomeView extends AbstractEntityView {
             }
         });
 
-        Container categoryRiceButton7 = createCategoryButton("All", "all-icon.png", evt -> {
+        Container categoryRiceButton7 = createCategoryButton("Todos", "all-icon.png", evt -> {
             updateFilter(Restaurant.CATEGORY_ALL);
             evt.consume();
             ActionNode action = viewNode.getInheritedAction(HomeView.ENTER_SEARCH);
@@ -264,17 +264,17 @@ public class HomeView extends AbstractEntityView {
         categoryContainer.addAll(categoryRiceButton,
                 categoryRiceButton1,
                 categoryRiceButton2,
-                categoryRiceButton3,
-                categoryRiceButton5,
-                categoryRiceButton4,
-                categoryRiceButton6,
+                //categoryRiceButton3,
+                //categoryRiceButton5,
+                //categoryRiceButton4,
+                //categoryRiceButton6,
                 categoryRiceButton7
         );
         add(categoryContainer);
 
         Container popularCnt = new Container(new BorderLayout());
         popularCnt.setUIID("PopularCnt");
-        Label popularLabel = new Label("Popular Near You", "CategoryHeader");
+        Label popularLabel = new Label("Motristas Popular", "CategoryHeader");
         Button popularExploreButton = new Button("EXPLORE >", "ExploreButton");
         popularCnt.add(BorderLayout.NORTH, BorderLayout.centerEastWest(null, popularExploreButton, popularLabel));
         popularCnt.add(BorderLayout.CENTER, createPopularCnt(appEntity.getEntityList(restaurantsProp)));
@@ -290,7 +290,7 @@ public class HomeView extends AbstractEntityView {
 
         Container recommendCnt = new Container(new BorderLayout());
         recommendCnt.setUIID("RecommendCnt");
-        Label recommendedLabel = new Label("We Recommended", "CategoryHeader");
+        Label recommendedLabel = new Label("Recomendado", "CategoryHeader");
         Button recommendedExploreButton = new Button("EXPLORE >", "ExploreButton");
         recommendedExploreButton.addActionListener(evt -> {
             evt.consume();
@@ -306,12 +306,12 @@ public class HomeView extends AbstractEntityView {
 
         Container allRestaurantsCnt = new Container(new BorderLayout());
         allRestaurantsCnt.setUIID("AllRestaurantsCnt");
-        Label allRestaurantsLabel = new Label("All Restaurants", "CategoryHeader");
+        Label allRestaurantsLabel = new Label("Todos Motoristas", "CategoryHeader");
         allRestaurantsCnt.add(BorderLayout.NORTH, allRestaurantsLabel);
         allRestaurantsCnt.add(BorderLayout.CENTER, createAllRestaurantsCnt(appEntity.getEntityList(restaurantsProp)));
         add(allRestaurantsCnt);
 
-        Button backToTopButton = new Button("BACK TO TOP", "BackToTopButton");
+        Button backToTopButton = new Button("Retornar ao topo", "BackToTopButton");
         backToTopButton.addActionListener(evt -> {
             scrollComponentToVisible(topView);
         });

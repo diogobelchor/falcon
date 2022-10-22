@@ -44,7 +44,7 @@ public class ThirdIntroductionView extends AbstractEntityView {
         Container wrapper = new Container(new BorderLayout(BorderLayout.CENTER_BEHAVIOR_CENTER_ABSOLUTE));
         setUIID("IntroductionView");
 
-        Label header = new Label("Deliver at your Home", "IntroductionHeader");
+        Label header = new Label("Motorista ate você", "IntroductionHeader");
         String imageName = Grub.isDarkMode() ? "third-intro-image-dark.png" : "third-intro-image.png";
         ScaleImageLabel introImage = new ScaleImageLabel(getGlobalResources().getImage(imageName)){
             @Override
@@ -68,7 +68,7 @@ public class ThirdIntroductionView extends AbstractEntityView {
         Label emptyThirdLabel = new Label ("    ", "IntroEmptyLabelOn");
         Container progressCnt = BoxLayout.encloseXCenter(emptyFirstLabel, emptySecondLabel, emptyThirdLabel);
 
-        Button next = new Button("GET STARTED", "IntroductionNextButton");
+        Button next = new Button("Começar", "IntroductionNextButton");
         next.addActionListener(evt->{
             evt.consume();
             ActionNode action = grubNode.getInheritedAction(FINISHED_THIRD_INTRO);

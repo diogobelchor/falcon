@@ -65,13 +65,13 @@ public class FilterView extends AbstractEntityView{
             evt.consume();
             ActionSupport.dispatchEvent(new FormController.FormBackEvent(backButton));
         });
-        Label headerLabel = new Label("SET FILTER", "FilterHeaderLabel");
+        Label headerLabel = new Label("Selecionar filtro", "FilterHeaderLabel");
         Container headerCnt = BorderLayout.centerCenter(headerLabel).add(BorderLayout.WEST, backButton);
         headerCnt.setUIID("FilterHeaderCnt");
 
         add(headerCnt);
 
-        Label categoryLabel = new Label("Category", "FilterHeader");
+        Label categoryLabel = new Label("Categoria", "FilterHeader");
         add(categoryLabel);
 
         List categories = null;

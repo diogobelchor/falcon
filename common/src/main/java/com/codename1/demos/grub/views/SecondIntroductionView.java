@@ -44,7 +44,7 @@ public class SecondIntroductionView extends AbstractEntityView {
         Container wrapper = new Container(new BorderLayout(BorderLayout.CENTER_BEHAVIOR_CENTER_ABSOLUTE));
         setUIID("IntroductionView");
 
-        Label header = new Label("Order Your Favorite", "IntroductionHeader");
+        Label header = new Label("Favoritos", "IntroductionHeader");
 
         String imageName = Grub.isDarkMode() ? "second-intro-image-dark.png" : "second-intro-image.png";
         ScaleImageLabel introImage = new ScaleImageLabel(getGlobalResources().getImage(imageName)){

@@ -46,11 +46,11 @@ public class SetFirstLocationView extends AbstractEntityView {
 
         Container newLocationCnt = new Container(new BoxLayout(BoxLayout.Y_AXIS));
         newLocationCnt.setUIID("SetFirstLocationWrapperView");
-        Label enterLocationHeader = new Label("ENTER LOCATION", "SetFirstAddressHeader");
-        TextField city = new TextField("", "City", 20, TextArea.ANY);
+        Label enterLocationHeader = new Label("Sua localizção", "SetFirstAddressHeader");
+        TextField city = new TextField("", "Cidade", 20, TextArea.ANY);
         city.setUIID("SetFirstLocationTextField");
         city.getHintLabel().setUIID("SetFirstLocationTextFieldHint");
-        TextField street = new TextField("", "Street", 20, TextArea.ANY);
+        TextField street = new TextField("", "Rua", 20, TextArea.ANY);
         street.setUIID("SetFirstLocationTextField");
         street.getHintLabel().setUIID("SetFirstLocationTextFieldHint");
         Button continueButton = new Button("CONTINUE", "SetFirstAddressNextButton");
@@ -64,7 +64,7 @@ public class SetFirstLocationView extends AbstractEntityView {
                 action.fireEvent(entity, SetFirstLocationView.this);
             }
         });
-        Button skipForNowButton = new Button("SKIP FOR NOW", "SetFirstAddressSkipButton");
+        Button skipForNowButton = new Button("Passar", "SetFirstAddressSkipButton");
         skipForNowButton.addActionListener(evt -> {
             evt.consume();
             ActionNode action = viewNode.getInheritedAction(Grub.SKIP_TO_MAIN_WINDOW);

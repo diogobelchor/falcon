@@ -45,7 +45,7 @@ public class SignUpView extends AbstractEntityView {
         setScrollableY(true);
         Container wrapper = new Container(new BorderLayout());
 
-        Label signUpHeader = new Label("Create An Account", "SignUpHeader");
+        Label signUpHeader = new Label("Criar uma conta", "SignUpHeader");
         Image grubLogo = getGlobalResources().getImage("grub-logo.png");
         ScaleImageLabel logoLabel = new ScaleImageLabel(grubLogo);
         Container signUpTopView = BoxLayout.encloseY(logoLabel, signUpHeader);
@@ -53,23 +53,23 @@ public class SignUpView extends AbstractEntityView {
         wrapper.add(BorderLayout.NORTH, signUpTopView);
 
 
-        TextField firstName = new TextField("", "First Name", 20, TextArea.ANY);
+        TextField firstName = new TextField("", "Nome", 20, TextArea.ANY);
         firstName.setUIID("SignUpField");
         firstName.getHintLabel().setUIID("SignUpFieldHint");
 
-        TextField lastName = new TextField("", "Last Name", 20, TextArea.ANY);
+        TextField lastName = new TextField("", "Sobrenome", 20, TextArea.ANY);
         lastName.setUIID("SignUpField");
         lastName.getHintLabel().setUIID("SignUpFieldHint");
 
-        TextField emailAddress = new TextField("", "Email Address", 20, TextArea.EMAILADDR);
+        TextField emailAddress = new TextField("", "Email", 20, TextArea.EMAILADDR);
         emailAddress.setUIID("SignUpField");
         emailAddress.getHintLabel().setUIID("SignUpFieldHint");
 
-        TextField password = new TextField("", "Password", 20, TextArea.PASSWORD);
+        TextField password = new TextField("", "Senha", 20, TextArea.PASSWORD);
         password.setUIID("SignUpField");
         password.getHintLabel().setUIID("SignUpFieldHint");
 
-        TextField phoneNumber = new TextField("", "Mobile Number", 20, TextArea.PHONENUMBER);
+        TextField phoneNumber = new TextField("", "Telefone", 20, TextArea.PHONENUMBER);
         phoneNumber.setUIID("SignUpField");
         phoneNumber.getHintLabel().setUIID("SignUpFieldHint");
         wrapper.add(BorderLayout.CENTER, BoxLayout.encloseY(firstName, lastName, emailAddress, password, phoneNumber));
@@ -81,7 +81,7 @@ public class SignUpView extends AbstractEntityView {
         validator.addConstraint(password, new LengthConstraint(8));
         validator.addConstraint(phoneNumber, new LengthConstraint(10));
 
-        Button confirmSignUp = new Button("Sign Up", "SignUpConfirmButton");
+        Button confirmSignUp = new Button("Registrar", "SignUpConfirmButton");
         validator.addSubmitButtons(confirmSignUp);
         confirmSignUp.addActionListener(evt -> {
             evt.consume();
@@ -97,8 +97,8 @@ public class SignUpView extends AbstractEntityView {
             }
         });
 
-        Label goToSignInLabel = new Label("ALREADY HAVE AN ACCOUNT?", "SignUpLabel");
-        Button goToSignInButton = new Button("SIGN IN", "GoToSighInButton");
+        Label goToSignInLabel = new Label("Você tem uma conta?", "SignUpLabel");
+        Button goToSignInButton = new Button("Acessar", "GoToSighInButton");
 
         goToSignInButton.addActionListener(evt->{
             evt.consume();
@@ -108,8 +108,8 @@ public class SignUpView extends AbstractEntityView {
             }
         });
 
-        Label continueWith = new Label("----OR CONTINUE WITH----", "SignUpLabel");
-        Button forgotPassword = new Button("FORGOT PASSWORD?", "SignUpLabel");
+        Label continueWith = new Label("----Ou Continue com----", "SignUpLabel");
+        Button forgotPassword = new Button("Esqueceu a senha?", "SignUpLabel");
 
         Image facebookIconImage = getGlobalResources().getImage("facebook-icon.png").scaled(convertToPixels(5), convertToPixels(5));
         Image googleIconImage = getGlobalResources().getImage("google-icon.png").scaled(convertToPixels(5), convertToPixels(5));

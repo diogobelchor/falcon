@@ -62,16 +62,16 @@ public class NewAddressView extends AbstractEntityView {
             evt.consume();
             ActionSupport.dispatchEvent(new FormController.FormBackEvent(backButton));
         });
-        Label headerLabel = new Label("ADD ADDRESS", "EditAddressesHeaderLabel");
+        Label headerLabel = new Label("Adcionar endereço", "EditAddressesHeaderLabel");
         Container headerCnt = BorderLayout.center(headerLabel).add(BorderLayout.WEST, backButton);
         headerCnt.setUIID("EditAddressesHeaderCnt");
         wrapper.add(BorderLayout.NORTH, headerCnt);
 
-        TextField city = new TextField("", "City", 20, TextArea.ANY);
+        TextField city = new TextField("", "Cidade", 20, TextArea.ANY);
         city.setUIID("AddressField");
         city.getHintLabel().setUIID("AddressFieldHint");
 
-        TextField street = new TextField("", "Street", 20, TextArea.ANY);
+        TextField street = new TextField("", "Rua", 20, TextArea.ANY);
         street.setUIID("AddressField");
         street.getHintLabel().setUIID("AddressFieldHint");
 
@@ -88,25 +88,25 @@ public class NewAddressView extends AbstractEntityView {
         Style addressTypeStyle = UIManager.getInstance().getComponentStyle("AddressTypeStyle");
         Style addressTypeSelectedStyle = UIManager.getInstance().getComponentStyle("AddressTypeSelectedStyle");
 
-        RadioButton home = RadioButton.createToggle(" Home", FontImage.createMaterial(FontImage.MATERIAL_HOME, addressTypeStyle), bg);
+        RadioButton home = RadioButton.createToggle(" Casa", FontImage.createMaterial(FontImage.MATERIAL_HOME, addressTypeStyle), bg);
         home.setUIID("AddressTypeButton");
         home.setPressedIcon(FontImage.createMaterial(FontImage.MATERIAL_HOME, addressTypeSelectedStyle));
 
-        RadioButton work = RadioButton.createToggle(" Work", FontImage.createMaterial(FontImage.MATERIAL_WORK, addressTypeStyle), bg);
+        RadioButton work = RadioButton.createToggle(" Trabalho", FontImage.createMaterial(FontImage.MATERIAL_WORK, addressTypeStyle), bg);
         work.setUIID("AddressTypeButton");
         work.setPressedIcon(FontImage.createMaterial(FontImage.MATERIAL_WORK, addressTypeSelectedStyle));
 
-        RadioButton other = RadioButton.createToggle(" Other", FontImage.createMaterial(FontImage.MATERIAL_PLACE, addressTypeStyle), bg);
+        RadioButton other = RadioButton.createToggle(" Outro", FontImage.createMaterial(FontImage.MATERIAL_PLACE, addressTypeStyle), bg);
         other.setUIID("AddressTypeButton");
         other.setPressedIcon(FontImage.createMaterial(FontImage.MATERIAL_PLACE, addressTypeSelectedStyle));
 
-        CheckBox defaultAddress = new CheckBox("Default Address");
+        CheckBox defaultAddress = new CheckBox("Endereço padrão");
         defaultAddress.setUIID("DefaultAddressCheckBox");
         bg.setSelected(0);
 
         wrapper.add(BorderLayout.CENTER, BoxLayout.encloseY(FlowLayout.encloseCenter(home, work, other), city, street, freeText, defaultAddress));
 
-        Button saveAddress = new Button("SAVE ADDRESS", "SaveAddressConfirmButton");
+        Button saveAddress = new Button("Salvar", "SaveAddressConfirmButton");
         validator.addSubmitButtons(saveAddress);
         saveAddress.addActionListener(evt -> {
             evt.consume();

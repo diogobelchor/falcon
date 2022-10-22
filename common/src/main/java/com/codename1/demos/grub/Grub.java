@@ -146,7 +146,7 @@ public class Grub extends ApplicationController {
     }
 
     private Entity createRestaurantDemoModel(){
-        RestaurantModel restaurant = new RestaurantModel("Sergio's Pizza", "https://sergeycodenameone.github.io/restaurant.png", "Italian", 4.7, 5, "https://sergeycodenameone.github.io/restaurant-icon.png",30, createDemoMenu());
+        RestaurantModel restaurant = new RestaurantModel("Sergio", "https://sergeycodenameone.github.io/restaurant.png", "Italian", 4.7, 5, "https://sergeycodenameone.github.io/restaurant-icon.png",30, createDemoMenu());
         return restaurant;
     }
 

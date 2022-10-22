@@ -89,7 +89,7 @@ Images{
                         url(images/delivery-time-icon.png),
                         url(images/rating-icon.png),
                         url(images/distance-icon.png),
-                        url(images/lobby-background.png);
+                        url(images/loby-background.png);
     cn1-source-dpi: 0;
 }
 
@@ -609,7 +609,7 @@ OrderConfirmButton.pressed{
 }
 
 AccountCnt{
-    background-image: url(images/lobby-background.png);
+    background-image: url(images/loby-background.png);
     cn1-background-type: cn1-image-scaled-fill;
     cn1-source-dpi: 320;
     margin: 0;

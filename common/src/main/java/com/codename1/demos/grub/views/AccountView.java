@@ -68,7 +68,7 @@ public class AccountView extends AbstractEntityView {
         });
 
 
-        Button signIn = new Button("Sign In", "SignInButton");
+        Button signIn = new Button("Acessar", "SignInButton");
         signIn.addActionListener(evt -> {
             evt.consume();
             ActionNode action = viewNode.getInheritedAction(SIGN_IN);
@@ -77,7 +77,7 @@ public class AccountView extends AbstractEntityView {
             }
         });
 
-        Button signUp = new Button("Sign Up", "SignUpButton");
+        Button signUp = new Button("Registrar", "SignUpButton");
         signUp.addActionListener(evt -> {
             evt.consume();
             ActionNode action = viewNode.getInheritedAction(SIGN_UP);
@@ -95,7 +95,7 @@ public class AccountView extends AbstractEntityView {
                 return new Dimension(getDisplayWidth() / 2 , (int)(width / 1.4));
             }
         };
-        Label welcomeText = new Label("WELCOME TO GRUB APP", "AccountWelcomeText");
+        Label welcomeText = new Label("Bem vindo ao FalconDrivers", "AccountWelcomeText");
 
         Container topView = BoxLayout.encloseY(logoLabel, welcomeText, BorderLayout.centerAbsolute(darkModeButton));
         topView.setUIID("AccountTopView");

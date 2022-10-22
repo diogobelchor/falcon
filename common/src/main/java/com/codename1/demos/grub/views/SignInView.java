@@ -49,18 +49,18 @@ public class SignInView<T extends Entity> extends AbstractEntityView<T> {
         setLayout(new BoxLayout(BoxLayout.Y_AXIS));
         setScrollVisible(false);
         setScrollableY(true);
-        Label signInHeader = new Label("Welcome Back!", "SignInHeader");
+        Label signInHeader = new Label("Bem vindo de volta!", "SignInHeader");
         Image grubLogo = getGlobalResources().getImage("grub-logo.png");
         ScaleImageLabel logoLabel = new ScaleImageLabel(grubLogo);
         Container signInTopView = BoxLayout.encloseY(logoLabel, signInHeader);
         signInTopView.setUIID("SignInTopView");
         wrapper.add(BorderLayout.NORTH, signInTopView);
 
-        TextField emailAddress = new TextField("", "Email Address", 20, TextArea.EMAILADDR);
+        TextField emailAddress = new TextField("", "Email", 20, TextArea.EMAILADDR);
         emailAddress.setUIID("SignInField");
         emailAddress.getHintLabel().setUIID("SignInFieldHint");
 
-        TextField password = new TextField("", "Password", 20, TextArea.PASSWORD);
+        TextField password = new TextField("", "Senha", 20, TextArea.PASSWORD);
         password.setUIID("SignInField");
         password.getHintLabel().setUIID("SignInFieldHint");
 
@@ -70,7 +70,7 @@ public class SignInView<T extends Entity> extends AbstractEntityView<T> {
 
         wrapper.add(BorderLayout.CENTER, BoxLayout.encloseY(emailAddress, password));
 
-        Button confirmSignIn = new Button("Sign In", "SignInConfirmButton");
+        Button confirmSignIn = new Button("Acessar", "SignInConfirmButton");
         validator.addSubmitButtons(confirmSignIn);
         confirmSignIn.addActionListener(evt -> {
             evt.consume();
@@ -86,8 +86,8 @@ public class SignInView<T extends Entity> extends AbstractEntityView<T> {
             }
         });
 
-        Label goToSignUpLabel = new Label("DON'T HAVE AN ACCOUNT?", "SignInLabel");
-        Button goToSignUpButton = new Button("SIGN UP", "GoToSighUpButton");
+        Label goToSignUpLabel = new Label("Você possui uma conta?", "SignInLabel");
+        Button goToSignUpButton = new Button("Registrar", "GoToSighUpButton");
 
         goToSignUpButton.addActionListener(evt->{
             evt.consume();
@@ -97,8 +97,8 @@ public class SignInView<T extends Entity> extends AbstractEntityView<T> {
             }
         });
 
-        Label continueWith = new Label("----OR CONTINUE WITH----", "SignInLabel");
-        Button forgotPassword = new Button("FORGOT PASSWORD?", "SignInLabel");
+        Label continueWith = new Label("----Ou Continue com----", "SignInLabel");
+        Button forgotPassword = new Button("Esqueceu a senha?", "SignInLabel");
 
         Image facebookIconImage = getGlobalResources().getImage("facebook-icon.png").scaled(convertToPixels(5), convertToPixels(5));
         Image googleIconImage = getGlobalResources().getImage("google-icon.png").scaled(convertToPixels(5), convertToPixels(5));

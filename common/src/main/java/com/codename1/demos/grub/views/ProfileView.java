@@ -66,7 +66,7 @@ public class ProfileView<T extends Entity> extends AbstractEntityView<T> {
         lastNameProp = account.findProperty(Account.lastName);
         phoneNumberProp = account.findProperty(Account.mobileNumber);
 
-        Label header = new Label("Profile", "ProfileHeader");
+        Label header = new Label("Perfil", "ProfileHeader");
         Container headerCnt = BorderLayout.center(header);
         headerCnt.setUIID("ProfileHeaderCnt");
 
@@ -88,7 +88,7 @@ public class ProfileView<T extends Entity> extends AbstractEntityView<T> {
         Image buttonGoToIcon = FontImage.createMaterial(FontImage.MATERIAL_KEYBOARD_ARROW_RIGHT,
                 UIManager.getInstance().getComponentStyle("ProfileButtonsGoToIcon"));
 
-        MultiButton editProfile = new MultiButton("Edit Profile");
+        MultiButton editProfile = new MultiButton("Editar Perfil");
         editProfile.setEmblem(FontImage.createMaterial(FontImage.MATERIAL_INFO, buttonEmblemStyle));
         editProfile.setEmblemPosition("West");
         editProfile.setIcon(buttonGoToIcon);
@@ -103,7 +103,7 @@ public class ProfileView<T extends Entity> extends AbstractEntityView<T> {
             }
         });
 
-        MultiButton myAddressButton = new MultiButton("My Address");
+        MultiButton myAddressButton = new MultiButton("Meu endereço");
         myAddressButton.setEmblem(FontImage.createMaterial(FontImage.MATERIAL_LOCATION_ON, buttonEmblemStyle));
         myAddressButton.setEmblemPosition("West");
         myAddressButton.setIcon(buttonGoToIcon);
@@ -118,7 +118,7 @@ public class ProfileView<T extends Entity> extends AbstractEntityView<T> {
             }
         });
 
-        MultiButton paymentButton = new MultiButton("Payment");
+        MultiButton paymentButton = new MultiButton("Pagamentos");
         paymentButton.setEmblem(FontImage.createMaterial(FontImage.MATERIAL_CREDIT_CARD, buttonEmblemStyle));
         paymentButton.setEmblemPosition("West");
         paymentButton.setIcon(buttonGoToIcon);
